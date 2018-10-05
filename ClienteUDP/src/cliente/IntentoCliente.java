@@ -44,7 +44,7 @@ public class IntentoCliente {
 
 		try {
 			//Envio el mensaje de listo al servidor
-			InetAddress address = InetAddress.getLocalHost();
+			InetAddress address = InetAddress.getByName("157.253.205.67");
 			String mensajeIni = "Listo";
 			DatagramSocket socket = new DatagramSocket();
 			DatagramPacket paqueteIni = new DatagramPacket(mensajeIni.getBytes(), mensajeIni.getBytes().length, address, PORT_SERVIDOR);
@@ -176,12 +176,12 @@ public class IntentoCliente {
 			if(NUMERO==1)
 			{
 				nombre = "video1";
-				tamano = "tamaño en bytes: " + archivoOriginal.length;
+				tamano = "tamaÃ±o en bytes: " + archivoOriginal.length;
 			}
 			else
 			{
 				nombre = "video2";
-				tamano = "tamaño en bytes: " + archivoOriginal.length;
+				tamano = "tamaÃ±o en bytes: " + archivoOriginal.length;
 			}
 			writer.write("Nombre archivo: ");
 			writer.newLine();
@@ -193,7 +193,7 @@ public class IntentoCliente {
 			writer.newLine();
 			writer.write(InetAddress.getLocalHost().getHostAddress());
 			writer.newLine();
-			writer.write("Se realizó con éxito el hash: ");
+			writer.write("Se realizÃ³ con Ã©xito el hash: ");
 			writer.newLine();
 			writer.write(resp);
 			writer.newLine();
@@ -248,7 +248,7 @@ public class IntentoCliente {
 			writer.write(sdf.format(resultdate11));
 			writer.newLine();
 
-			writer.write("Fin Conexión: ");
+			writer.write("Fin ConexiÃ³n: ");
 			Date resultdate12 = new Date(finCreacionArchivo);
 			writer.write(sdf.format(resultdate12));
 			writer.newLine();
@@ -273,7 +273,7 @@ public class IntentoCliente {
 
 		}catch(Exception e)
 		{
-			System.out.println("Algo sucedió" + e.getLocalizedMessage());
+			System.out.println("Algo sucediÃ³" + e.getLocalizedMessage());
 		}
 		System.out.println("Fin cliente");
 	}
