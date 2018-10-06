@@ -58,23 +58,27 @@ public class IntentoCliente {
 			byte[] buf = new byte[61440];
 			DatagramPacket paquete = new DatagramPacket(buf, buf.length);
 			socket.receive(paquete);
+			
 			inicioTransferenciaDatos = System.currentTimeMillis();
 
-			//Cuento paquetes
+			//Cuento paquetes y hash
 			String contador = new String(paquete.getData());
 			NUMERO = Integer.valueOf(contador.trim());
+			System.out.println("Num paquetes: " + NUMERO);
 
 			byte[] bytesult = new byte[61440];
 			DatagramPacket paqueteUlt = new DatagramPacket(bytesult, bytesult.length);
 			socket.receive(paqueteUlt);
 			String tam = new String(paqueteUlt.getData());
 			TAMANO_ULTIMO = Integer.valueOf(tam.trim());
+			System.out.println("Tamanio Ultimo paquete: " + TAMANO_ULTIMO);
 
 			//Recibo el hash a validar
 			buf = new byte[20];
 			paquete = new DatagramPacket(buf, buf.length);
 			socket.receive(paquete);
 			HASH_RECIBIDO = paquete.getData();
+			System.out.println("Hash recibido: " + HASH_RECIBIDO);
 
 			finTransferenciaDatos = System.currentTimeMillis();
 
