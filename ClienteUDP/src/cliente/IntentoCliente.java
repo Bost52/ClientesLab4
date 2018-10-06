@@ -139,7 +139,7 @@ public class IntentoCliente {
 			}
 			catch(Exception e)
 			{
-
+				System.out.println("Algo paso creando el video final");
 			}
 			System.out.println("fin creacion");
 			finCreacionArchivo = System.currentTimeMillis();
