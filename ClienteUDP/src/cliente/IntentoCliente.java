@@ -87,6 +87,7 @@ public class IntentoCliente {
 			DatagramPacket packet;
 			byte[] archivoOriginal = new byte[0];
 			ArrayList<byte[]> arreglo = new ArrayList<>();
+			System.out.println("Empezare a recibir");
 			for (int i = 0; i < NUMERO-1; i++) {
 				byte[] buffer = new byte[61440];
 				packet = new DatagramPacket(buffer, buffer.length);
